@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const routes = require("./routes");
 const { Sequelize, Model, Datatypes } = require("sequelize");
 
 /* const sequelize = new Sequelize("ha_ejercicio_20", "root", "root", {
@@ -31,8 +32,11 @@ User.init(
   { sequelize, modelName: "user", timestamps: false }
 ); */
 
+//Activación de Rutas
+app.use(routes);
+
 app.get("/", async function (req, res) {
-  // const usuarios = await User.findAll();
+  /*   const usuarios = await User.findAll(); */
   return res.send("OK");
 });
 
