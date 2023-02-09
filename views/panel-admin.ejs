@@ -39,7 +39,33 @@
             </th>
           </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>
+          <% for (user of users) { %>
+          <tr class="border">
+            <th scope="row"><%= user.id %></th>
+            <td class="border"><%= user.firstname %></td>
+            <td class="border"><%= user.lastname %></td>
+            <td class="border"><%= user.age %></td>
+            <td style="width: 10px; white-space: nowrap">
+              <a
+                href="/usuarios/editar/<%= user.id %>"
+                type="button"
+                class="btn btn-primary"
+                name="editUser"
+              >
+                Editar
+              </a>
+              <form
+                style="display: inline"
+                action="/usuarios/eliminar/<%= user.id %>?_method=delete"
+                method="POST"
+              >
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+              </form>
+            </td>
+          </tr>
+          <%}%>
+        </tbody>
       </table>
 
       <ul class="list-group"></ul>

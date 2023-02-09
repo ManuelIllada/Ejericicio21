@@ -4,7 +4,6 @@ const router = express.Router();
 const mainController = require("./controllers/mainController")
 const articleController = require("./controllers/articleController")
 
-
 router.get("/", (req, res) => {
     res.render("home")
 })
