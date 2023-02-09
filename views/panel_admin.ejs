@@ -13,6 +13,65 @@
     <title>Panel Administrador</title>
   </head>
   <body>
+    <%- includes("header") %>
+    <div style="width: 800px" class="container">
+      <div class="d-flex items-center justify-content-between my-4">
+        <h3>Listado de Usuarios</h3>
+        <div>
+          <a href="/usuarios/crear" type="button" class="btn btn-success"
+            >Nuevo</a
+          >
+        </div>
+      </div>
+      <table class="table table-striped table-hove">
+        <thead>
+          <tr class="border">
+            <th class="border" scope="col">Id</th>
+            <th class="border" scope="col">Nombre</th>
+            <th class="border" scope="col">Apellido</th>
+            <th class="border" scope="col">Edad</th>
+            <th
+              style="width: 10px; white-space: nowrap"
+              class="border"
+              scope="col"
+            >
+              Acciones
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (user of users) { %>
+          <tr class="border">
+            <th scope="row"><%= user.id %></th>
+            <td class="border"><%= user.firstname %></td>
+            <td class="border"><%= user.lastname %></td>
+            <td class="border"><%= user.age %></td>
+            <td style="width: 10px; white-space: nowrap">
+              <a
+                href="/usuarios/editar/<%= user.id %>"
+                type="button"
+                class="btn btn-primary"
+                name="editUser"
+              >
+                Editar
+              </a>
+              <form
+                style="display: inline"
+                action="/usuarios/eliminar/<%= user.id %>?_method=delete"
+                method="POST"
+              >
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+              </form>
+            </td>
+          </tr>
+          <%}%>
+        </tbody>
+      </table>
+
+      <ul class="list-group"></ul>
+    </div>
+
+    <%- includes("header") %>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"

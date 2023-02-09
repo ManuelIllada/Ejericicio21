@@ -7,7 +7,7 @@ const sequelize = new Sequelize("ha_ejercicio_20", "root", "root", {
   dialect: "mysql",
 });
 
-class User extends Model {}
+class User extends Model { }
 
 User.init(
   {
