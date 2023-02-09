@@ -5,5 +5,23 @@
     "init": "^0.1.2",
     "mysql2": "^3.1.2",
     "sequelize": "^6.28.0"
-  }
+  },
+  "name": "ejericicio21",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ManuelIllada/Ejericicio21.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ManuelIllada/Ejericicio21/issues"
+  },
+  "homepage": "https://github.com/ManuelIllada/Ejericicio21#readme",
+  "description": ""
 }
