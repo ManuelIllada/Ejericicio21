@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const { Sequelize, Model, Datatypes } = require("sequelize");
 
-const sequelize = new Sequelize("ha_ejercicio_20", "root", "root", {
+/* const sequelize = new Sequelize("ha_ejercicio_20", "root", "root", {
   host: "localhost",
   dialect: "mysql",
 });
@@ -29,7 +29,7 @@ User.init(
     },
   },
   { sequelize, modelName: "user", timestamps: false }
-);
+); */
 
 app.get("/", async function (req, res) {
   const usuarios = await User.findAll();
