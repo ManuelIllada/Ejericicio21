@@ -2,12 +2,6 @@ const express = require("express");
 const app = express();
 const { Sequelize, Model, Datatypes } = require("sequelize");
 
-app.set("view engine", "ejs")
-
-// - URLEncoded - Permite recibir la información enviada mediate el metodo POST, (sustituimos req.query por req.body)
-app.use(express.urlencoded({ extended: true }))
-
-
 /* const sequelize = new Sequelize("ha_ejercicio_20", "root", "root", {
   host: "localhost",
   dialect: "mysql",
@@ -37,12 +31,8 @@ User.init(
   { sequelize, modelName: "user", timestamps: false }
 ); */
 
-//Activación de Rutas
-app.use(routes)
-
-
 app.get("/", async function (req, res) {
-  /*   const usuarios = await User.findAll(); */
+  // const usuarios = await User.findAll();
   return res.send("OK");
 });
 
