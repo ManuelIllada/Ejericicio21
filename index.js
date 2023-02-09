@@ -1,9 +1,10 @@
 const express = require("express");
 const app = express();
 const routes = require("./routes");
-const port = 3000
+const port = 3000;
 
 app.set("view engine", "ejs");
+app.use(express.static("css"));
 
 //Activación de Rutas
 app.use(routes);

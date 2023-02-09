@@ -4,3 +4,8 @@
   height: 50vh;
   background-repeat: no-repeat;
 }
+.hack-blog {
+  font-size: 4rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: black;
+}
