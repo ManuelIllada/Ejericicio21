@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const routes = require("./routes");
 const { Sequelize, Model, Datatypes } = require("sequelize");
+app.get("view engine", "ejs");
 
 /* const sequelize = new Sequelize("ha_ejercicio_20", "root", "root", {
   host: "localhost",
