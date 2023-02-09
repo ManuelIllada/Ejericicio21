@@ -20,16 +20,18 @@
         <p>El blog de Hack Academy</p>
       </div>
     </div>
-    <div class="container">
+    <div class="container d-flex justify-content-center mt-3">
+      <div class="articulos ">
     <% for(const articulo of articulos) { %>
       <div class="text-center">
-      <h2 class="d-block"><%=articulo.title%></h2>
-      <p><%=articulo.create_at%></p>
+      <h2 class="d-block text-start fw-bold"><%=articulo.title%></h2>
+      <p class="text-start"><%=articulo.create_at%></p>
+      <hr>
     </div>
       
           
       <% } %>
-    
+    </div>
     </div>
 
     <%-include("footer")%>
