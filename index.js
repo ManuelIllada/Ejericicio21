@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const routes = require("./routes")
 const { Sequelize, Model, Datatypes } = require("sequelize");
 
 app.set("view engine", "ejs")
@@ -39,12 +40,6 @@ User.init(
 
 //Activación de Rutas
 app.use(routes)
-
-
-app.get("/", async function (req, res) {
-  /*   const usuarios = await User.findAll(); */
-  return res.send("OK");
-});
 
 app.listen(3000, function () {
   console.log("server funciona");
