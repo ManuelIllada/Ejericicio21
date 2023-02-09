@@ -15,7 +15,7 @@
   <body>
     <%- include("header") %>
     <div class="container">
-      <div class="d-flex items-center justify-content-between mt-4">
+      <div class="d-flex items-center justify-content-between pt-4">
         <h3 class="fw-bolder">Articulos</h3>
         <div>
           <a href="/usuarios/crear" type="button" class="btn btn-success"
@@ -53,7 +53,7 @@
             </td>
             <td>
               <img
-                style="object-content: fit; width: 100px"
+                style="object-fit: cover; width: 100px"
                 src="<%= articulo.image %>"
                 alt=""
               />
@@ -67,7 +67,7 @@
             <td style="width: 10px; white-space: nowrap">
               <div class="d-grid gap-2">
                 <a
-                  href="/usuarios/editar/<%= articulo.id %>"
+                  href="/articulos/editar/<%= articulo.id %>"
                   type="button"
                   class="btn btn-primary"
                   name="editUser"
