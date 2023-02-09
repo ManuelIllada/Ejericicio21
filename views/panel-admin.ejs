@@ -18,7 +18,7 @@
       <div class="d-flex items-center justify-content-between pt-4">
         <h3 class="fw-bolder">Articulos</h3>
         <div>
-          <a href="/usuarios/crear" type="button" class="btn btn-success"
+          <a href="/articles/add" type="button" class="btn btn-success"
             >Nuevo</a
           >
         </div>
@@ -42,7 +42,7 @@
           </tr>
         </thead>
         <tbody>
-          <% for (articulo of articulos) { %>
+          <% for (articulo of articles) { %>
           <tr>
             <th scope="row"><%= articulo.id %></th>
             <td style="font-size: 13px" class="border">
@@ -62,12 +62,16 @@
               <%= articulo.create_at %>
             </td>
             <td style="font-size: 13px" class="border">
-              <%= autores.nombre %>
+              <!--    comment -->
+              <% const author = authors.find(authors => authors.id == articulo.author_id) %>
+              <!--    comment -->
+              <%= author.nombre %> <%= author.apellido %>
             </td>
+
             <td style="width: 10px; white-space: nowrap">
               <div class="d-grid gap-2">
                 <a
-                  href="/articulos/editar/<%= articulo.id %>"
+                  href="/articles/edit/<%= articulo.id %>"
                   type="button"
                   class="btn btn-primary"
                   name="editUser"
