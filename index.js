@@ -1,12 +1,13 @@
 const express = require("express");
 const app = express();
 const routes = require("./routes");
+const port = 3000
 
 app.set("view engine", "ejs");
 
 //Activación de Rutas
 app.use(routes);
 
-app.listen(3000, function () {
-  console.log("server funciona");
+app.listen(port, function () {
+  console.log(`Server funciona en el puerto: ${port}`);
 });

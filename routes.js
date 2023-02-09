@@ -7,7 +7,7 @@ const mainController = require("./controllers/mainController")
 const articleController = require("./controllers/articleController") */
 
 router.get("/", async (req, res) => {
-    const [articulos] = await db("SELECT * FROM articulos")
+    const [articulos] = await db("SELECT * FROM articles")
     res.render("home", { articulos })
 })
 
@@ -16,8 +16,9 @@ router.get("/articulos", (req, res) => {
 })
 
 router.get("/admin", async (req, res) => {
-    const [articulos] = await db("SELECT * FROM articulos")
-    res.render("panel-admin", { articulos })
+    const [articulos] = await db("SELECT * FROM articles")
+    const [autores] = await db("SELECT * FROM authors")
+    res.render("panel-admin", { articulos, autores })
 })
 
 module.exports = router

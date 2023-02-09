@@ -14,9 +14,9 @@
   </head>
   <body>
     <%- include("header") %>
-    <div style="width: 800px" class="container">
-      <div class="d-flex items-center justify-content-between my-4">
-        <h3>Listado de Usuarios</h3>
+    <div class="container">
+      <div class="d-flex items-center justify-content-between mt-4">
+        <h3 class="fw-bolder">Articulos</h3>
         <div>
           <a href="/usuarios/crear" type="button" class="btn btn-success"
             >Nuevo</a
@@ -26,10 +26,12 @@
       <table class="table table-striped table-hove">
         <thead>
           <tr class="border">
-            <th class="border" scope="col">Id</th>
-            <th class="border" scope="col">Nombre</th>
-            <th class="border" scope="col">Apellido</th>
-            <th class="border" scope="col">Edad</th>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Content</th>
+            <th scope="col">Image</th>
+            <th scope="col">Create at</th>
+            <th scope="col">Author</th>
             <th
               style="width: 10px; white-space: nowrap"
               class="border"
@@ -41,27 +43,44 @@
         </thead>
         <tbody>
           <% for (articulo of articulos) { %>
-          <tr class="border">
+          <tr>
             <th scope="row"><%= articulo.id %></th>
-            <td class="border"><%= articulo.title %></td>
-            <td class="border"><%= articulo.content %></td>
-            <td class="border"><%= articulo.image %></td>
+            <td style="font-size: 13px" class="border">
+              <%= articulo.title.substring(0,50) %> %>
+            </td>
+            <td style="font-size: 13px" class="border">
+              <%= articulo.content.substring(0,300 ) %>... %>
+            </td>
+            <td>
+              <img
+                style="object-content: fit; width: 100px"
+                src="<%= articulo.image %>"
+                alt=""
+              />
+            </td>
+            <td style="font-size: 13px" class="border">
+              <%= articulo.create_at %>
+            </td>
+            <td style="font-size: 13px" class="border">
+              <%= autores.nombre %>
+            </td>
             <td style="width: 10px; white-space: nowrap">
-              <a
-                href="/usuarios/editar/<%= articulo.id %>"
-                type="button"
-                class="btn btn-primary"
-                name="editUser"
-              >
-                Editar
-              </a>
-              <form
-                style="display: inline"
-                action="/usuarios/eliminar/<%= articulo.id %>?_method=delete"
-                method="POST"
-              >
-                <button type="submit" class="btn btn-danger">Eliminar</button>
-              </form>
+              <div class="d-grid gap-2">
+                <a
+                  href="/usuarios/editar/<%= articulo.id %>"
+                  type="button"
+                  class="btn btn-primary"
+                  name="editUser"
+                >
+                  Editar
+                </a>
+                <form
+                  action="/usuarios/eliminar/<%= articulo.id %>?_method=delete"
+                  method="POST"
+                >
+                  <button type="submit" class="btn btn-danger">Eliminar</button>
+                </form>
+              </div>
             </td>
           </tr>
           <%}%>
