@@ -40,15 +40,15 @@
           </tr>
         </thead>
         <tbody>
-          <% for (user of users) { %>
+          <% for (articulo of articulos) { %>
           <tr class="border">
-            <th scope="row"><%= user.id %></th>
-            <td class="border"><%= user.firstname %></td>
-            <td class="border"><%= user.lastname %></td>
-            <td class="border"><%= user.age %></td>
+            <th scope="row"><%= articulo.id %></th>
+            <td class="border"><%= articulo.title %></td>
+            <td class="border"><%= articulo.content %></td>
+            <td class="border"><%= articulo.image %></td>
             <td style="width: 10px; white-space: nowrap">
               <a
-                href="/usuarios/editar/<%= user.id %>"
+                href="/usuarios/editar/<%= articulo.id %>"
                 type="button"
                 class="btn btn-primary"
                 name="editUser"
@@ -57,7 +57,7 @@
               </a>
               <form
                 style="display: inline"
-                action="/usuarios/eliminar/<%= user.id %>?_method=delete"
+                action="/usuarios/eliminar/<%= articulo.id %>?_method=delete"
                 method="POST"
               >
                 <button type="submit" class="btn btn-danger">Eliminar</button>
