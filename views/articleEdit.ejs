@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <title>Editar Articulo
+    </title>
+  </head>
+  <body>
+    <div style="width: 500px" class="container">
+      <form
+        class="mt-4 border rounded p-4 shadow"
+        method="POST"
+        action="/articles/edit/<%= article.id  %>?_method=patch"
+      >
+        <a href="/admin" style="margin-top: 10px">Volver</a>
+        <div class="text-center">
+          <h4>Editar Articulo</h4>
+          <hr />
+        </div>
+        <div class="mb-3">
+          <label for="title" class="form-label">Titulo</label>
+          <input
+            type="text"
+            name="title"
+            class="form-control"
+            id="title"
+            value="<%= article.title %>"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="content" class="form-label">Contenido</label>
+          <!-- comentario -->
+          <textarea
+            type="text"
+            name="content"
+            class="form-control"
+            id="content"
+            value="<%= article.content %>"
+            required
+          ><%= article.content %></textarea>
+        </div>
+        <div class="mb-3 d-grid">
+          <label for="image" class="form-label">Imagen</label>
+          <img
+          style="width: 200px;"
+            src="<%= article.image %>"
+            alt="image-articulo"
+          />
+        </div>
+        <div class="mt-4 d-flex justify-content-end">
+          <button type="submit" class="btn btn-primary">Editar</button>
+        </div>
+      </form>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
