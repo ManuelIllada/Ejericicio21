@@ -17,7 +17,7 @@
       <form
         class="mt-4 border rounded p-4 shadow"
         method="POST"
-        action="/usuarios?_method=put"
+        action="/articles/add?_method=put"
       >
         <a href="/admin" class="mt-2">Volver</a>
         <div class="text-center">
@@ -30,11 +30,23 @@
           >
           <input
             type="text"
-            name="firstname"
+            name="title"
             class="form-control"
-            id="firstname"
+            id="title"
             placeholder="Ej: Premios al mejor ..."
             required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label"
+            >Link Imgen</label
+          >
+          <input
+            type="text"
+            name="image"
+            class="form-control"
+            id="image"
+            placeholder="http://...."
           />
         </div>
         <div class="mb-3">
@@ -43,9 +55,9 @@
           >
           <textarea
             type="text"
-            name="lastname"
+            name="content"
             class="form-control"
-            id="lastname"
+            id="content"
             placeholder="Ej: El pasado jueves, en la localidad de ..."
             required
           ></textarea>

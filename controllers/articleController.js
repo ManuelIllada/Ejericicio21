@@ -2,7 +2,7 @@ const db = require("../db");
 
 //Página Todos los Articulos
 const index = async (req, res) => {
-    const [articulos] = await db("SELECT * FROM articles ORDER BY create_at DESC");
+    const [articulos] = await db("SELECT * FROM articles");
     res.render("home", { articulos });
 }
 
@@ -23,19 +23,13 @@ const editArticlePage = async (req, res) => {
 //Página admin de Articulos
 const admArticulosPAge = async (req, res) => {
     const [articles] = await db("SELECT * FROM articles");
-    const [authors] = await db("SELECT * FROM authors");
-    res.render("panel-admin", { articles, authors });
+    const [users] = await db("SELECT * FROM users");
+    res.render("panel-admin", { articles, users });
 }
 
 //Insertar un Articulo
-const addArticleFunction = async (req, res) => {
-    ///////Opcion 1 <- Más Segura
-    /*    const { firstname, lastname, age } = req.body
-       await db(`INSERT INTO users (firstname, lastname, age) VALUES (?, ?, ?)`, [firstname, lastname, age]) */
-    ///////Opcion 2 
-    /*  await db(`INSERT INTO users (firstname, lastname, age) VALUES ("${req.body.firstname}", "${req.body.lastname}", ${req.body.age})`) */
-    return res.redirect("/articulos")
-}
+const addArticleFunction = ""
+
 
 //Editar un Articulo
 const editArticleFunction = async (req, res) => {
@@ -45,9 +39,6 @@ const editArticleFunction = async (req, res) => {
 }
 
 //Eliminar un Articulo
-const deleteArticle = async (req, res) => {
-    await db(`DELETE FROM articles WHERE id = "${req.params.id}"`)
-    return res.redirect("/articulos")
-}
+const deleteArticle = ""
 
 module.exports = { index, addArticlePage, addArticleFunction, editArticlePage, editArticleFunction, deleteArticle, admArticulosPAge }
