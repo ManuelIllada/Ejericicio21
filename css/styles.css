@@ -4,6 +4,7 @@
   height: 50vh;
   background-repeat: no-repeat;
 }
+
 .hack-blog {
   font-size: 4rem;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -12,4 +13,22 @@
 
 .articulos {
   width: 60%;
+}
+
+.hack-titulo {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 41px;
+  color: rgb(255, 255, 255);
+}
+
+.hack-info {
+  font-family: Lora;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  color: rgb(255, 255, 255);
 }
