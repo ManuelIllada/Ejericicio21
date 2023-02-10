@@ -209,14 +209,16 @@ router.put("/articles/add", async (req, res) => {
 })
 
 // Función Editar Articulo
-/* router.put("/articles/add", async (req, res) => {
+router.patch("/articles/edit/:id", async (req, res) => {
     await Articles.update({
         title: req.body.title,
         content: req.body.content,
         image: req.body.img
+    }, {
+        where: { id: req.params.id }
     })
     res.redirect("/admin")
-}) */
+})
 
 
 // Función Eliminar Articulo
