@@ -14,12 +14,13 @@
   </head>
   <body>
     <%-include("header")%>
-  
-    <div class="contenedor d-flex justify-content-center align-items-center">
+    <div class="contenedor">
+      <div class="bg-dark w-100  h-100 bg-opacity-75 d-flex justify-content-center align-items-center ">
       <div class="texto-centrado text-center fw-bold">
         <h1 class="hack-blog">Hack the blog</h1>
-        <p>El blog de Hack Academy</p>
+        <p class="text-light">El blog de Hack Academy</p>
       </div>
+    </div>
       
     </div>
 
@@ -28,7 +29,7 @@
     <% for(const articulo of articulos) { %>
       <div class="text-center">
         <a class="text-decoration-none text-dark " href="/articles/<%=articulo.id%>"><h2 class="d-block text-start fw-bold"><%=articulo.title%></h2></a>
-        <p class="text-start opacity-75"> <%=format(articulo.create_at, "'Fue creado el'  EEEE d 'de' LLLL 'de' yyyy " ,{ locale: es })%> </p>
+        <p class="text-start opacity-75" style="font-style: italic; font-family: lora;"> <%=format(articulo.create_at, "'Fue creado el'  EEEE d 'de' LLLL 'de' yyyy " ,{ locale: es })%> </p>
       <hr>
       </div>
       
