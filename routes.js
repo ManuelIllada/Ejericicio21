@@ -3,6 +3,7 @@ const router = express.Router();
 
 ///////////////////////////////////////// Controladores
 const articleController = require("./controllers/articleController");
+const commentsController = require("./controllers/commentsController");
 
 /////////////////////////////////////// PÁGINAS ARTICULO
 
@@ -31,5 +32,8 @@ router.patch("/articles/edit/:id", articleController.editArticleFunction);
 
 // Función Eliminar Articulo
 router.delete("/articles/delete/:id", articleController.deleteArticle);
+
+// Función Agregar Comentario
+router.put("/articles/:id", commentsController.addCommentFunction);
 
 module.exports = router;
