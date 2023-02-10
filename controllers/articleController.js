@@ -1,6 +1,7 @@
 const db = require("../db");
 const { format } = require("date-fns");
 const { es } = require("date-fns/locale");
+const { Articles } = require("../models")
 
 //Página Todos los Articulos
 const index = async (req, res) => {
@@ -10,7 +11,6 @@ const index = async (req, res) => {
 
 //Página Crear Articulos
 const addArticlePage = (req, res) => {
-  console.log("entra");
   res.render("articleAdd");
 };
 
@@ -38,13 +38,37 @@ const admArticulosPAge = async (req, res) => {
 };
 
 //Insertar un Articulo
-const addArticleFunction = "";
+const addArticleFunction = async (req, res) => {
+  await Articles.create({
+    title: req.body.title,
+    content: req.body.content,
+    image: req.body.img,
+  });
+  res.redirect("/admin");
+};
 
 //Editar un Articulo
-const editArticleFunction = "";
+const editArticleFunction = async (req, res) => {
+  await Articles.update(
+    {
+      title: req.body.title,
+      content: req.body.content,
+      image: req.body.img,
+    },
+    {
+      where: { id: req.params.id },
+    }
+  );
+  res.redirect("/admin");
+};
 
 //Eliminar un Articulo
-const deleteArticle = "";
+const deleteArticle = async (req, res) => {
+  await Articles.destroy({
+    where: { id: req.params.id },
+  });
+  res.redirect("/admin");
+};
 
 module.exports = {
   index,

@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require("sequelize");
+const { Sequelize, Model, DataTypes } = require("sequelize");
 
 class Articles extends Model {
     static initModel(sequelize) {
@@ -21,12 +21,8 @@ class Articles extends Model {
                 image: {
                     type: DataTypes.BLOB,
                 },
-                create_at: {
-                    type: DataTypes.DATE,
-                    defaultValue: Sequelize.literal("(CURRENT_DATE())"),
-                }
             },
-            { sequelize, modelName: "article", timestamps: false }
+            { sequelize, modelName: "article" }
         );
         return Articles;
     }

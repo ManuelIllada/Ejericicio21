@@ -18,3 +18,16 @@ module.exports = async function (consult, values = null) {
     connection.end();
     return res
 }
+
+/* const db = require("./models"); */
+
+/* module.exports = async () => {
+  // Crear tablas:
+  await db.sequelize.sync({ alter: true });
+  console.log("[Database] ¡Las tablas fueron creadas!");
+
+  // Ejecutar seeders (datos de prueba):
+  await require("./seeders/articleSeeder")();
+  console.log("[Database] ¡Los datos de prueba fueron insertados!");
+}; */
+
