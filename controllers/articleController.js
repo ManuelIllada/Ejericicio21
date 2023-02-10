@@ -23,8 +23,7 @@ const editArticlePage = async (req, res) => {
 //Página admin de Articulos
 const admArticulosPAge = async (req, res) => {
     const [articles] = await db("SELECT * FROM articles");
-    const [users] = await db("SELECT * FROM users");
-    res.render("panel-admin", { articles, users });
+    res.render("panel-admin", { articles });
 }
 
 //Insertar un Articulo
