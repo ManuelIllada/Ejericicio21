@@ -14,17 +14,20 @@
   </head>
   <body>
     <%-include("header")%>
+  
     <div class="contenedor d-flex justify-content-center align-items-center">
       <div class="texto-centrado text-center fw-bold">
         <h1 class="hack-blog">Hack the blog</h1>
         <p>El blog de Hack Academy</p>
       </div>
+      
     </div>
+
     <div class="container d-flex justify-content-center mt-3">
       <div class="articulos ">
     <% for(const articulo of articulos) { %>
       <div class="text-center">
-        <h2 class="d-block text-start fw-bold"><%=articulo.title%></h2>
+        <a class="text-decoration-none text-dark " href="/articles/<%=articulo.id%>"><h2 class="d-block text-start fw-bold"><%=articulo.title%></h2></a>
         <p class="text-start"><%=articulo.create_at%></p>
       <hr>
       </div>
