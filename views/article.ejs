@@ -73,10 +73,14 @@
         </div>
         <hr />
         <div class="py-5">
-          <form>
+          <form class="mt-4 border rounded p-4 shadow"
+                method="POST"
+                action="/articles/<%= article.id %>?_method=put"
+          >
             <div class="mb-3">
               <h3>Add your comment</h3>
               <input
+                name="name"
                 type="text"
                 class="form-control"
                 id="name"
@@ -84,7 +88,7 @@
               />
             </div>
             <div class="mb-3">
-              <textarea type="text" class="form-control" id="comment"></textarea>
+              <textarea name="content" type="text" class="form-control" id="comment"></textarea>
             </div>
             <button type="submit" class="btn btn-primary" style="width: 100%">
               Send
