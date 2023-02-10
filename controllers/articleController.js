@@ -24,10 +24,7 @@ const editArticlePage = async (req, res) => {
 
 //Página datos de un Articulo
 const articlePage = async (req, res) => {
-    const [article] = await db(
-        `SELECT * FROM articles WHERE id = ${req.params.id} `
-    );
-    console.log(article);
+    const [article] = await db(`SELECT * FROM articles WHERE id = ${req.params.id} `);
     res.render("article", { article: article[0], format, es });
 };
 
@@ -48,6 +45,7 @@ const deleteArticle = "";
 
 module.exports = {
     index,
+    articlePage,
     addArticlePage,
     addArticleFunction,
     editArticlePage,
