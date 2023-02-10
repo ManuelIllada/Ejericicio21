@@ -16,42 +16,44 @@
   <body>
     <%- include("header") %>
     <div>
-      <div class="contenedor d-flex justify-content-center align-items-center">
-        <div class="container texto-centrado text-center fw-bold" style="width: 50%;">
-          <h1
-            class="hack-titulo"
-            type="text"
-            name="title"
-            class="form-control"
-            id="title"
-            value="<%= article.title %>"
-            required
-          >
-            <%= article.title %>
-          </h1>
-          <div class="d-flex">
-            <p
-              class="hack-info"
+      <div class="contenedor">
+        <div class="bg-dark w-100 h-100 bg-opacity-75 d-flex justify-content-center align-items-center">
+          <div class="container fw-bold" style="width: 50%;">
+            <h1
+              class="hack-titulo"
               type="text"
               name="title"
               class="form-control"
               id="title"
-              value="<%= article.users %>"
+              value="<%= article.title %>"
               required
             >
-              Creado por <%= article.users %>
-            </p>
-            <p
-              class="hack-info"
-              type="text"
-              name="title"
-              class="form-control"
-              id="title"
-              value="<%= article.create_at %>"
-              required
-            >
-              <%= format(article.create_at, " 'el' EEEE d 'de' LLLL yyyy",  {locale: es}) %>
-            </p>
+              <%= article.title %>
+            </h1>
+            <div class="d-flex">
+              <p
+                class="hack-info"
+                type="text"
+                name="title"
+                class="form-control"
+                id="title"
+                value="<%= article.users %>"
+                required
+              >
+                Creado por <%= article.users %>
+              </p>
+              <p
+                class="hack-info"
+                type="text"
+                name="title"
+                class="form-control"
+                id="title"
+                value="<%= article.create_at %>"
+                required
+              >
+                <%= format(article.create_at, " 'el' EEEE d 'de' LLLL yyyy",  {locale: es}) %>
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -82,14 +84,7 @@
               />
             </div>
             <div class="mb-3">
-              <input type="text" class="form-control" id="comment" />
-            </div>
-            <div class="mb-3 form-check">
-              <input
-                type="checkbox"
-                class="form-check-input"
-                id="exampleCheck1"
-              />
+              <textarea type="text" class="form-control" id="comment"></textarea>
             </div>
             <button type="submit" class="btn btn-primary" style="width: 100%">
               Send

@@ -32,21 +32,21 @@ const articlePage = async (req, res) => {
 const admArticulosPAge = async (req, res) => {
     const [articles] = await db("SELECT * FROM articles");
     res.render("panel-admin", { articles, format, es });
-}
+};
 
 //Insertar un Articulo
 const addArticleFunction = "";
 
 //Editar un Articulo
-const editArticleFunction = ""
+const editArticleFunction = "";
 
 //Eliminar un Articulo
 const deleteArticle = "";
 
 module.exports = {
     index,
-    articlePage,
     addArticlePage,
+    articlePage,
     addArticleFunction,
     editArticlePage,
     editArticleFunction,
