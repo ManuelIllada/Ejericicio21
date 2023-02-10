@@ -63,10 +63,6 @@
               <%= articulo.create_at %>
             </td>
             <td style="font-size: 13px" class="border">
-              <!--    comment -->
-              <% const author = authors.find(authors => authors.id == articulo.author_id) %>
-              <!--    comment -->
-              <%= author.nombre %> <%= author.apellido %>
             </td>
 
             <td style="width: 10px; white-space: nowrap">
@@ -80,7 +76,7 @@
                   Editar
                 </a>
                 <form
-                  action="/usuarios/eliminar/<%= articulo.id %>?_method=delete"
+                  action="/articles/delete/<%= articulo.id %>?_method=delete"
                   method="POST"
                 >
                   <button type="submit" class="btn btn-danger">Eliminar</button>
