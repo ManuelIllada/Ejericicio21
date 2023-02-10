@@ -134,7 +134,7 @@ const addUser = async (req, res) => {
     console.log("se crearon los usuarios");
 };
 
-/* addUSer() */ //////////////////////////////////////// <- Crear Usuarios
+/* addUSer() */ ///////////////////////////////////////////// <- Crear Usuarios
 
 const addArticle = async (req, res) => {
     await Articles.create({
