@@ -1,34 +1,18 @@
 const express = require("express");
 const router = express.Router();
-const db = require("./db");
+
+const articleController = require("./controllers/articleController")
 
 const { Sequelize, Model, DataTypes } = require("sequelize");
 
-/* 
-const mainController = require("./controllers/mainController")
-const articleController = require("./controllers/articleController") */
-
 // Pagina Home
-router.get("/", async (req, res) => {
-    const [articulos] = await db(
-        "SELECT * FROM articles ORDER BY create_at DESC"
-    );
-    res.render("home", { articulos });
-});
+router.get("/", articleController.index);
 
 // Pagina editar Articulo
-router.get("/articles/edit/:id", async (req, res) => {
-    const [article] = await db(
-        `SELECT * FROM articles WHERE id = ${req.params.id} `
-    );
-    console.log(article);
-    res.render("articleEdit", { article: article[0] });
-});
+router.get("/articles/edit/:id", articleController.editArticlePage);
 
 // Pagina agregar Articulo
-router.get("/articles/add/", async (req, res) => {
-    res.render("articleAdd");
-});
+router.get("/articles/add/", articleController.addArticlePage);
 
 // Pagina Articulo
 router.get("/articles", (req, res) => {
@@ -36,10 +20,13 @@ router.get("/articles", (req, res) => {
 });
 
 // Pagina panel Administrador
-router.get("/admin", async (req, res) => {
-    const [articles] = await db("SELECT * FROM articles");
-    const [authors] = await db("SELECT * FROM authors");
-    res.render("panel-admin", { articles, authors });
-});
+router.get("/admin", articleController.admArticulosPAge);
+
+// Función Agregar Articulo
+
+// Función Editar Articulo
+
+// Función Eliminar Articulo
+
 
 module.exports = router;
