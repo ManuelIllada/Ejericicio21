@@ -60,10 +60,10 @@
               />
             </td>
             <td style="font-size: 13px" class="border">
-              <%= articulo.create_at %>
+              <%=format(articulo.create_at, "EEEE d 'de' LLLL 'de' yyyy " ,{ locale: es })%>
             </td>
             <td style="font-size: 13px" class="border">
-              <%= articulo.create_at %>
+         
             </td>
             <td style="width: 10px; white-space: nowrap">
               <div class="d-grid gap-2">
