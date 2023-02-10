@@ -192,6 +192,9 @@ router.get("/", articleController.index);
 // Pagina editar Articulo
 router.get("/articles/edit/:id", articleController.editArticlePage);
 
+// Pagina Articulo
+router.get("/articles/:id", articleController.articlePage);
+
 // Pagina agregar Articulo
 router.get("/articles/add/", articleController.addArticlePage);
 
