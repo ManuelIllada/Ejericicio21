@@ -92,7 +92,11 @@
           </form>
         </div>
         <div class="pb-5">
-          <h3>Comments </h3>
+          <h3>Comments (<%= comments.length%>)</h3>
+          <% for (com of comments) { %>
+            <p style="font-size: 1.2rem; font-family: 'Lora'; font-style: normal; padding-top: 1rem;"> "<%= com.content %>"</p>
+            <hr/>
+          <% } %>
         </div>
       </div>
     <%- include("footer") %>
