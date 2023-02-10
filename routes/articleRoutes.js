@@ -5,7 +5,7 @@ const articleController = require("../controllers/articleController");
 ///////////////////////////////////////  PAGINAS ARTICULO
 
 // Página Home Articulos
-router.get("/", articleController.index);
+router.get("/", articleController.index);;
 
 // Pagina agregar Articulo
 router.get("/articles/add", articleController.addArticlePage);
