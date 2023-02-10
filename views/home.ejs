@@ -28,7 +28,7 @@
     <% for(const articulo of articulos) { %>
       <div class="text-center">
         <a class="text-decoration-none text-dark " href="/articles/<%=articulo.id%>"><h2 class="d-block text-start fw-bold"><%=articulo.title%></h2></a>
-        <p class="text-start"><%=articulo.create_at%></p>
+        <p class="text-start opacity-75"> <%=format(articulo.create_at, "'Fue creado el'  EEEE d 'de' LLLL 'de' yyyy " ,{ locale: es })%> </p>
       <hr>
       </div>
       
