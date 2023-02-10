@@ -10,15 +10,13 @@ const index = async (req, res) => {
 
 //Página Crear Articulos
 const addArticlePage = (req, res) => {
+    console.log("entra")
     res.render("articleAdd");
 };
 
 //Página editar un Articulo
 const editArticlePage = async (req, res) => {
-    const [article] = await db(
-        `SELECT * FROM articles WHERE id = ${req.params.id} `
-    );
-    console.log(article);
+    const [article] = await db(`SELECT * FROM articles WHERE id = ${req.params.id} `);
     res.render("articleEdit", { article: article[0] });
 };
 
@@ -45,8 +43,8 @@ const deleteArticle = "";
 
 module.exports = {
     index,
-    addArticlePage,
     articlePage,
+    addArticlePage,
     addArticleFunction,
     editArticlePage,
     editArticleFunction,

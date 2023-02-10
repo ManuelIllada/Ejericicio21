@@ -187,22 +187,17 @@ const addComments = async (req, res) => {
 
 /////////////////////////////////////// PÁGINAS ARTICULO
 
-// Pagina Home
+// Página Home Articulos
 router.get("/", articleController.index);
+
+// Pagina agregar Articulo
+router.get("/articles/add", articleController.addArticlePage);
 
 // Pagina editar Articulo
 router.get("/articles/edit/:id", articleController.editArticlePage);
 
-// Pagina Articulo
+// Pagina un Articulo
 router.get("/articles/:id", articleController.articlePage);
-
-// Pagina agregar Articulo
-router.get("/articles/add/", articleController.addArticlePage);
-
-// Pagina Articulo
-router.get("/articles/:id", (req, res) => {
-    res.render("article");
-});
 
 // Pagina panel Administrador
 router.get("/admin", articleController.admArticulosPAge);
