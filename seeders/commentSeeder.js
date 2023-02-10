@@ -13,4 +13,4 @@ const addComments = async (req, res) => {
     });
 };
 
-/* addComments(); */ //////////////////////////////////////// <- Crear Comentario
+/* addComments(); */ //////////////////////////////////////// <- Poblar     Comentario

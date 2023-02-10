@@ -2,7 +2,6 @@ const { Model, DataTypes } = require("sequelize");
 
 class Comments extends Model {
     static initModel(sequelize) {
-
         Comments.init(
             {
                 id: {

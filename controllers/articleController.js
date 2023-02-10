@@ -1,11 +1,11 @@
 const db = require("../db");
 const { format } = require("date-fns");
 const { es } = require("date-fns/locale");
-const { Articles } = require("../models")
+const { Articles, Comments } = require("../models");
 
 //Página Todos los Articulos
 const index = async (req, res) => {
-  const [articulos] = await db("SELECT * FROM articles");
+  const articulos = await Articles.findAll();
   res.render("home", { articulos, format, es });
 };
 
@@ -24,16 +24,14 @@ const editArticlePage = async (req, res) => {
 
 //Página datos de un Articulo
 const articlePage = async (req, res) => {
-  const [article] = await db(
-    `SELECT * FROM articles WHERE id = ${req.params.id} `
-  );
-  const [comments] = await db(`SELECT * FROM comments`);
-  res.render("article", { article: article[0], comments, format, es });
+  const article = await Articles.findByPk(req.params.id);
+  const comments = await Comments.findAll({ where: { articleId: req.params.id } })
+  res.render("article", { article, comments, format, es });
 };
 
 //Página admin de Articulos
 const admArticulosPAge = async (req, res) => {
-  const [articles] = await db("SELECT * FROM articles");
+  const articles = await Articles.findAll();
   res.render("panel-admin", { articles, format, es });
 };
 

@@ -2,15 +2,32 @@ const express = require("express");
 const router = express.Router();
 const articleController = require("../controllers/articleController");
 
-// Rutas relacionadas a los artículos:
-// ...
+///////////////////////////////////////  PAGINAS ARTICULO
 
+// Página Home Articulos
 router.get("/", articleController.index);
-router.get("/crear", articleController.create);
-router.get("/", articleController.store);
-router.get("/:id", articleController.show);
-router.get("/:id/editar", articleController.edit);
-router.get("/:id", articleController.update);
-router.get("/:id", articleController.destroy);
+
+// Pagina agregar Articulo
+router.get("/articles/add", articleController.addArticlePage);
+
+// Pagina editar Articulo
+router.get("/articles/edit/:id", articleController.editArticlePage);
+
+// Pagina un Articulo
+router.get("/articles/:id", articleController.articlePage);
+
+// Pagina panel Administrador
+router.get("/admin", articleController.admArticulosPAge);
+
+///////////////////////////////////////  FUNCIONES ARTICULO
+
+// Función Agregar Articulo
+router.put("/articles/add", articleController.addArticleFunction);
+
+// Función Editar Articulo
+router.patch("/articles/edit/:id", articleController.editArticleFunction);
+
+// Función Eliminar Articulo
+router.delete("/articles/delete/:id", articleController.deleteArticle);
 
 module.exports = router;

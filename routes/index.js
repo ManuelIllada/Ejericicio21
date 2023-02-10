@@ -17,8 +17,8 @@ const commentRoutes = require("./commentRoutes");
  * una API esta alternativa no tendría sentido.
  */
 
-const publicRoutes = require("./publicRoutes");
-const privateRoutes = require("./privateRoutes");
+/* const publicRoutes = require("./publicRoutes");
+const privateRoutes = require("./privateRoutes"); */
 
 module.exports = (app) => {
   /**
@@ -29,9 +29,9 @@ module.exports = (app) => {
    */
 
   app.use("/usuarios", userRoutes);
-  app.use("/articulos", articleRoutes);
+  app.use("/", articleRoutes);
   app.use("/comentarios", commentRoutes);
 
-  app.use("/", publicRoutes);
-  app.use("/panel", privateRoutes);
+  /*   app.use("/", publicRoutes);
+    app.use("/admin", privateRoutes); */
 };

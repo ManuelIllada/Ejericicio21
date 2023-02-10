@@ -52,5 +52,5 @@ const addArticle = async () => {
   console.log("Articulos poblados");
 };
 
-addArticle();   //////////////////////////////////////// <- Poblar Articulos
+addArticle(); //////////////////////////////////////// <- Poblar Articulos
 

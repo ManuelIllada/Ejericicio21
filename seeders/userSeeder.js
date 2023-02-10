@@ -19,4 +19,4 @@ const addUser = async (req, res) => {
     console.log("se crearon los usuarios");
 };
 
-/* addUser() */  ///////////////////////////////////////////// <- Crear Usuarios
+/* addUser() */  ///////////////////////////////////////////// <- Poblar Usuarios
