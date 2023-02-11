@@ -63,7 +63,8 @@
               <%=format(articulo.createdAt, "EEEE d 'de' LLLL 'de' yyyy " ,{ locale: es })%>
             </td>
             <td style="font-size: 13px" class="border">
-         
+              <%= articulo.user.nombre %>
+              <%= articulo.user.apellido %>
             </td>
             <td style="width: 10px; white-space: nowrap">
               <div class="d-grid gap-2">

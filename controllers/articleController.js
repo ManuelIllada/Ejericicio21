@@ -1,7 +1,7 @@
 const db = require("../db");
 const { format } = require("date-fns");
 const { es } = require("date-fns/locale");
-const { Articles, Comments } = require("../models");
+const { Articles, Comments, Users } = require("../models");
 
 //Página Todos los Articulos
 const index = async (req, res) => {
@@ -16,10 +16,8 @@ const addArticlePage = (req, res) => {
 
 //Página editar un Articulo
 const editArticlePage = async (req, res) => {
-  const [article] = await db(
-    `SELECT * FROM articles WHERE id = ${req.params.id} `
-  );
-  res.render("articleEdit", { article: article[0] });
+  const article = await Articles.findByPk(req.params.id);
+  res.render("articleEdit", { article });
 };
 
 //Página datos de un Articulo
@@ -31,7 +29,7 @@ const articlePage = async (req, res) => {
 
 //Página admin de Articulos
 const admArticulosPAge = async (req, res) => {
-  const articles = await Articles.findAll();
+  const articles = await Articles.findAll({ include: Users });
   res.render("panel-admin", { articles, format, es });
 };
 
@@ -40,7 +38,7 @@ const addArticleFunction = async (req, res) => {
   await Articles.create({
     title: req.body.title,
     content: req.body.content,
-    image: req.body.img,
+    image: req.body.image
   });
   res.redirect("/admin");
 };
@@ -51,7 +49,7 @@ const editArticleFunction = async (req, res) => {
     {
       title: req.body.title,
       content: req.body.content,
-      image: req.body.img,
+      image: req.body.image,
     },
     {
       where: { id: req.params.id },

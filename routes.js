@@ -34,6 +34,6 @@ router.patch("/articles/edit/:id", articleController.editArticleFunction);
 router.delete("/articles/delete/:id", articleController.deleteArticle);
 
 // Función Agregar Comentario
-router.put("/articles/:id", commentsController.addCommentFunction);
+router.put("/comments/add/:id", commentsController.addCommentFunction);
 
 module.exports = router;

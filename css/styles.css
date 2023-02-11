@@ -1,6 +1,6 @@
 .contenedor {
   background-image: url("https://fondosmil.com/fondo/52686.jpg");
-  width: 100%;
+  width: 100vw;
   height: 50vh;
   background-repeat: no-repeat;
 }
@@ -40,6 +40,7 @@
   line-height: 23px;
   color: rgb(255, 255, 255);
 }
+
 #titulo-article {
   text-decoration: none;
 }
