@@ -22,14 +22,14 @@
       </div>
     </div>
       
-    </div>
+  
 
     <div class="container d-flex justify-content-center mt-3">
       <div class="articulos ">
     <% for(const articulo of articulos) { %>
       <div class="text-center">
         <a class="text-decoration-none text-dark " href="/articles/<%=articulo.id%>"><h2 class="d-block text-start fw-bold"><%=articulo.title%></h2></a>
-        <p class="text-start opacity-75" style="font-style: italic; font-family: lora;"> <%=format(articulo.createdAt, "'Fue creado el'  EEEE d 'de' LLLL 'de' yyyy " ,{ locale: es })%> </p>
+        <p class="text-start opacity-75" style="font-style: italic; font-family: lora;"> <%=format(articulo.createdAt, "'Fue creado el'  EEEE d 'de' LLLL 'de' yyyy " ,{ locale: es })%> por <%=articulo.user.nombre%> <%=articulo.user.apellido%> </p>
       <hr>
       </div>
       

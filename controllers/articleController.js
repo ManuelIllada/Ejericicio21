@@ -5,7 +5,7 @@ const { Articles, Comments, Users } = require("../models");
 
 //Página Todos los Articulos
 const index = async (req, res) => {
-  const articulos = await Articles.findAll();
+  const articulos = await Articles.findAll({ include: Users });
   res.render("home", { articulos, format, es });
 };
 
@@ -22,7 +22,7 @@ const editArticlePage = async (req, res) => {
 
 //Página datos de un Articulo
 const articlePage = async (req, res) => {
-  const article = await Articles.findByPk(req.params.id);
+  const article = await Articles.findByPk(req.params.id, { include: Users });
   const comments = await Comments.findAll({ where: { articleId: req.params.id } })
   res.render("article", { article, comments, format, es });
 };
