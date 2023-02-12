@@ -16,49 +16,13 @@
   <body>
     <%- include("header") %>
     <div>
-      <div class="contenedor">
-        <img style="position:absolute; object-fit: cover; width: 100vw; height: 23vw;" src="<%= article.image %>" alt="">
-        <div class="bg-dark bg-opacity-75 d-flex justify-content-center align-items-center">
-          <div class="container fw-bold" style="width: 50%;">
-            <h1
-              class="hack-titulo"
-              type="text"
-              name="title"
-              class="form-control"
-              id="title"
-              value="<%= article.title %>"
-              required
-            >
-              <%= article.title %>
-            </h1>
-            <div class="d-flex">
-              <p
-                class="hack-info"
-                type="text"
-                name="title"
-                class="form-control"
-                id="title"
-                value="<%= article.users %>"
-                required
-              >
-                Creado por <%= article.users %>
-              </p>
-              <p
-                class="hack-info"
-                type="text"
-                name="title"
-                class="form-control"
-                id="title"
-                value="<%= article.createdAt %>"
-                required
-              >
-                <%= format(article.createdAt, " 'el' EEEE d 'de' LLLL yyyy",  {locale: es}) %>
-              </p>
-            </div>
+        <div class="contenedor">
+          <div class="bg-dark w-100 h-100 bg-opacity-75 d-flex justify-content-center align-items-center">
+          <div class="fw-bold text-center" style="width: 50%;">
+            <h1 class="hack-titulo "><%= article.title %></h1>
+            <p class="hack-info mt-3"> Creado por <%= article.user.nombre %> <%= article.user.apellido %> el <%= format(article.createdAt, " EEEE d 'de' LLLL yyyy",  {locale: es}) %></p>
           </div>
         </div>
-       
-      </div>
       <div class="container" style="width: 50%;">
         <div class="py-5">
           <p

@@ -22,6 +22,9 @@ router.get("/articles/:id", articleController.articlePage);
 // Pagina panel Administrador
 router.get("/admin", articleController.admArticulosPAge);
 
+// Página Api Articulos
+router.get("/api/articulos", articleController.apiArticlesPage)
+
 ///////////////////////////////////////  FUNCIONES ARTICULO
 
 // Función Agregar Articulo

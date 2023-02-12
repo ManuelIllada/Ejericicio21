@@ -5,7 +5,7 @@ const { Articles, Comments, Users } = require("../models");
 
 //Página Todos los Articulos
 const index = async (req, res) => {
-  const articulos = await Articles.findAll();
+  const articulos = await Articles.findAll({ include: Users });
   res.render("home", { articulos, format, es });
 };
 
@@ -33,6 +33,12 @@ const articlePage = async (req, res) => {
 const admArticulosPAge = async (req, res) => {
   const articles = await Articles.findAll({ include: Users });
   res.render("panel-admin", { articles, format, es });
+};
+
+//Página Api Articulos
+const apiArticlesPage = async (req, res) => {
+  const articulos = await Articles.findAll({ include: Users });
+  res.json({ articulos });
 };
 
 //Insertar un Articulo
@@ -74,6 +80,7 @@ module.exports = {
   addArticlePage,
   addArticleFunction,
   editArticlePage,
+  apiArticlesPage,
   editArticleFunction,
   deleteArticle,
   admArticulosPAge,
