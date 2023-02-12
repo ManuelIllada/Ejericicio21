@@ -23,7 +23,9 @@ const editArticlePage = async (req, res) => {
 //Página datos de un Articulo
 const articlePage = async (req, res) => {
   const article = await Articles.findByPk(req.params.id);
-  const comments = await Comments.findAll({ where: { articleId: req.params.id } })
+  const comments = await Comments.findAll({
+    where: { articleId: req.params.id },
+  });
   res.render("article", { article, comments, format, es });
 };
 
@@ -38,7 +40,7 @@ const addArticleFunction = async (req, res) => {
   await Articles.create({
     title: req.body.title,
     content: req.body.content,
-    image: req.body.image
+    image: req.body.image,
   });
   res.redirect("/admin");
 };
