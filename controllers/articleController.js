@@ -33,6 +33,13 @@ const admArticulosPAge = async (req, res) => {
   res.render("panel-admin", { articles, format, es });
 };
 
+//Página Api Articulos
+const apiArticlesPage = async (req, res) => {
+  const articulos = await Articles.findAll({ include: Users });
+  res.json({ articulos });
+};
+
+
 //Insertar un Articulo
 const addArticleFunction = async (req, res) => {
   await Articles.create({
@@ -72,6 +79,7 @@ module.exports = {
   addArticlePage,
   addArticleFunction,
   editArticlePage,
+  apiArticlesPage,
   editArticleFunction,
   deleteArticle,
   admArticulosPAge,
