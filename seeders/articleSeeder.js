@@ -1,5 +1,5 @@
 const { faker } = require("@faker-js/faker");
-const { Articles } = require("../models")
+const { Articles } = require("../models");
 
 faker.locale = "es";
 
@@ -12,14 +12,13 @@ module.exports = async () => {
       title: faker.lorem.sentence(5),
       content: faker.lorem.paragraphs(),
       image: faker.image.cats(),
-      userId: faker.helpers.arrayElement([1, 2, 3, 4])
+      userId: faker.helpers.arrayElement([1, 2, 3, 4]),
     });
   }
 
   await Articles.bulkCreate(articles);
   console.log("[Database] Se corrió el seeder de Articles.");
 };
-
 
 /* const { Articles } = require("../models")
 
@@ -56,4 +55,3 @@ module.exports = async () => {
   });
   console.log("Articulos poblados");
 }; */
-
