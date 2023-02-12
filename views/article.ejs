@@ -21,10 +21,11 @@
           <div class="fw-bold text-center" style="width: 50%;">
             <h1 class="hack-titulo "><%= article.title %></h1>
             <p class="hack-info mt-3"> Creado por <%= article.user.nombre %> <%= article.user.apellido %> el <%= format(article.createdAt, " EEEE d 'de' LLLL yyyy",  {locale: es}) %></p>
+            
           </div>
         </div>
       <div class="container" style="width: 50%;">
-        <div class="py-5">
+        <div class="py-5 d-flex justify-content-center align-items-center flex-column">
           <p
             class="hack-content"
             type="text"
@@ -36,6 +37,11 @@
           >
             <%= article.content %>
           </p>
+          <img
+            src="<%= article.image %>"
+            alt="Imagen articulo"
+            style="width: 75%; height: 75%; background-repeat: no-repeat; padding-top: 3rem;"
+          />
         </div>
         <hr />
         <div class="py-5">
