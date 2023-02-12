@@ -16,13 +16,13 @@ const addArticlePage = (req, res) => {
 
 //Página editar un Articulo
 const editArticlePage = async (req, res) => {
-  const article = await Articles.findByPk(req.params.id);
+  const article = await Articles.findByPk(req.params.id, { include: Users });
   res.render("articleEdit", { article });
 };
 
 //Página datos de un Articulo
 const articlePage = async (req, res) => {
-  const article = await Articles.findByPk(req.params.id);
+  const article = await Articles.findByPk(req.params.id, { include: Users });
   const comments = await Comments.findAll({
     where: { articleId: req.params.id },
   });
