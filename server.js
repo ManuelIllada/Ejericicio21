@@ -7,8 +7,19 @@ const express = require("express");
 const app = express();
 const routes = require("./routes");
 
+//Faker
+const fakerArticulos = require("./seeders/articleSeeder")
+const fakerComments = require("./seeders/commentSeeder")
+const fakerUsers = require("./seeders/userSeeder")
+
 // METHODOVERRIDE
 const methodOverride = require('method-override')
+
+// Poblanco DB
+/* fakerUsers()
+fakerArticulos() */
+/* fakerComments() */
+
 
 app.set("view engine", "ejs");
 app.use(express.static("css"));

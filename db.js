@@ -8,15 +8,15 @@ const DB_PASSWORD = process.env.DB_PASSWORD;
 
 // Creando la conexión con la base de datos MySQL en TablePlus
 module.exports = async function (consult, values = null) {
-    const connection = await mysql.createConnection({
-        host: DB_HOST,
-        user: DB_USERNAME,
-        password: DB_PASSWORD,
-        database: DB_DATABASE
-    });
-    const res = await connection.execute(consult, values)
-    connection.end();
-    return res
+  const connection = await mysql.createConnection({
+    host: DB_HOST,
+    user: DB_USERNAME,
+    password: DB_PASSWORD,
+    database: DB_DATABASE
+  });
+  const res = await connection.execute(consult, values)
+  connection.end();
+  return res
 }
 
 /* const db = require("./models"); */
