@@ -11,7 +11,8 @@ module.exports = async () => {
       id: [i],
       title: faker.lorem.sentence(5),
       content: faker.lorem.paragraphs(),
-      image: faker.image.cats(),
+
+      image: faker.image.abstract(),
       userId: faker.helpers.arrayElement([1, 2, 3, 4]),
     });
   }

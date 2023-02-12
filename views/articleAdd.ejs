@@ -25,7 +25,7 @@
           <hr />
         </div>
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label"
+          <label for="title" class="form-label"
             >Titulo</label
           >
           <input
@@ -36,6 +36,22 @@
             placeholder="Ej: Premios al mejor ..."
             required
           />
+        </div>
+        <div class="mb-3">
+          <label for="autor" class="form-label"
+            >Autor</label
+          >
+          <select
+            type="text"
+            name="author"
+            class="form-control"
+            id="autor"
+            required
+          >
+         <% for (author of users) { %>
+          <option value="<%= author.id %>"><%= author.nombre %> <%= author.apellido %></option>
+         <% } %>
+        </select>
         </div>
         <div class="mb-3">
           <label for="exampleFormControlInput1" class="form-label"
