@@ -10,8 +10,9 @@ const index = async (req, res) => {
 };
 
 //Página Crear Articulos
-const addArticlePage = (req, res) => {
-  res.render("articleAdd");
+const addArticlePage = async (req, res) => {
+  const users = await Users.findAll();
+  res.render("articleAdd", { users });
 };
 
 //Página editar un Articulo
@@ -47,6 +48,7 @@ const addArticleFunction = async (req, res) => {
     title: req.body.title,
     content: req.body.content,
     image: req.body.image,
+    userId: req.body.author
   });
   res.redirect("/admin");
 };
