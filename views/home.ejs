@@ -13,31 +13,31 @@
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <%-include("header")%>
+    <div class="slide-bottom">
+        <%-include("header")%>
       <!--     HERO -->
         <div class="contenedor hero">
-          <div class="bg-dark w-100  h-100 bg-opacity-75 d-flex justify-content-center align-items-center ">
-          <div class="texto-centrado text-center fw-bold fade-in">
-            <h1 class="hack-blog">HackBlog</h1>
-            <p class="text-light">El blog de Hack Academy</p>
+
+          <div class="bg-dark w-100 h-100 bg-opacity-75 d-flex justify-content-center align-items-center ">
+          <div class="d-flex flex-column texto-centrado text-center fw-bold fade-in">
+            <img class="me-auto" src="https://firebasestorage.googleapis.com/v0/b/noboss-app.appspot.com/o/nobossAppSimple%2Frecursos%2Ftest%2Fname.png?alt=media&token=8e643248-126b-4304-88ac-f05f47c526dc" alt="logo">
+            <p style=" font-family: lora;" class="text-light">Blog de noticias tecnológicas.</p>
           </div>
         </div>
-          
-      
-
-    <div class="container d-flex justify-content-center mt-3">
-        <div class="articulos">
-          <% for(const articulo of articulos) { %>
-          <div class="text-center slide-in-blurred-bottom">
+    </div>
+        <div class="container d-flex justify-content-center mt-3">
+          <div class="articulos">
+            <% for(const articulo of articulos) { %>
+            <div class="text-center">
              <a class="text-decoration-none text-dark " href="/articles/<%=articulo.id%>"><h2 class="d-block text-start fw-bold"><%=articulo.title%></h2></a>
              <p class="text-start opacity-75" style="font-style: italic; font-family: lora;"> <%=format(articulo.createdAt, "'Fue creado el'  EEEE d 'de' LLLL 'de' yyyy " ,{ locale: es })%> por <%=articulo.user.nombre%> <%=articulo.user.apellido%> </p>
              <hr>
-          </div>
+            </div>
            <% } %>
+         </div>
         </div>
-    </div>
 
-    <%-include("footer")%>
+        <%-include("footer")%>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
