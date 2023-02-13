@@ -18,14 +18,14 @@
     <div>
         <div class="contenedor">
           <div class="bg-dark w-100 h-100 bg-opacity-75 d-flex justify-content-center align-items-center">
-          <div class="fw-bold text-center" style="width: 50%;">
+          <div class="fw-bold text-center bounce-top" style="width: 50%;">
             <h1 class="hack-titulo" style="font-size: 2rem;"><%= article.title %></h1>
             <p class="hack-info mt-3"> Creado por <%= article.user.nombre %> <%= article.user.apellido %> el <%= format(article.createdAt, " EEEE d 'de' LLLL yyyy",  {locale: es}) %></p>
             
           </div>
         </div>
       <div class="container" style="width: 50%;">
-        <div class="py-5 d-flex justify-content-center align-items-center flex-column">
+        <div class="py-5 d-flex justify-content-center align-items-center flex-column bounce-bottom">
           <p
             class="hack-content"
             type="text"
@@ -44,7 +44,7 @@
           />
         </div>
         <hr />
-        <div class="py-3">
+        <div class="py-3 tilt-in-right-2">
           <form class="mt-4 border rounded p-4 shadow"
                 method="POST"
                 action="/comments/add/<%= article.id %>?_method=put"
@@ -68,7 +68,7 @@
             </button>
           </form>
         </div>
-        <div class="pb-5">
+        <div class="pb-5 tilt-in-right-2">
           <h3>Comments (<%= comments.length%>)</h3>
           <% for (com of comments) { %>
             <p style="font-size: 1.2rem; font-family: 'Lora'; font-style: normal; padding-top: 1rem;"> "<%= com.content %>"</p>
