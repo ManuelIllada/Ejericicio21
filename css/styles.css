@@ -148,6 +148,9 @@
 #contenedor-de-articulo {
   width: 50%;
 }
+#creado-por {
+  font-size: 1rem;
+}
 
 @media (max-width: 767.98px) {
   #logo {
@@ -167,5 +170,8 @@
   }
   #contenedor-de-articulo {
     width: 100%;
+  }
+  #creado-por {
+    font-size: 0.7rem;
   }
 }
