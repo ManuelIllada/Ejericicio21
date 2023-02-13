@@ -18,7 +18,8 @@
 }
 
 .slide-in-fwd-center {
-  -webkit-animation: slide-in-fwd-center 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  -webkit-animation: slide-in-fwd-center 0.8s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: slide-in-fwd-center 1.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
@@ -37,10 +38,10 @@
 }
 
 .slide-in-blurred-bottom {
-  -webkit-animation: slide-in-blurred-bottom 1.2s cubic-bezier(0.23, 1, 0.32, 1) both;
+  -webkit-animation: slide-in-blurred-bottom 1.2s cubic-bezier(0.23, 1, 0.32, 1)
+    both;
   animation: slide-in-blurred-bottom 1.2s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
-
 
 @keyframes slide-in-blurred-bottom {
   0% {
@@ -64,9 +65,9 @@
   }
 }
 
-
 .tilt-in-right-2 {
-  -webkit-animation: tilt-in-right-2 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  -webkit-animation: tilt-in-right-2 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
   animation: tilt-in-right-2 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
@@ -89,7 +90,6 @@
   animation: slide-bottom 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-
 @keyframes slide-bottom {
   0% {
     -webkit-transform: translateY(-100px);
@@ -101,7 +101,6 @@
     transform: translateY(0);
   }
 }
-
 
 .hack-blog {
   font-size: 4rem;
@@ -141,4 +140,19 @@
 
 #titulo-article {
   text-decoration: none;
+}
+
+@media (max-width: 767.98px) {
+  #logo {
+    width: auto;
+    height: 5rem;
+  }
+  #articulos {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+  }
+  .articulos {
+    width: 90%;
+  }
 }
