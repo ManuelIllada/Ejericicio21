@@ -1,5 +1,5 @@
-const db = require("../db");
 const { format } = require("date-fns");
+const formidable = require("formidable")
 const { es } = require("date-fns/locale");
 const { Articles, Comments, Users } = require("../models");
 
@@ -43,14 +43,20 @@ const apiArticlesPage = async (req, res) => {
 };
 
 //Insertar un Articulo
-const addArticleFunction = async (req, res) => {
-  await Articles.create({
-    title: req.body.title,
-    content: req.body.content,
-    image: req.body.image,
-    userId: req.body.author
+const addArticleFunction = (req, res) => {
+  const form = formidable({
+    uploadDir: __dirname + "/../public/img",
+    keepExtensions: true,
   });
-  res.redirect("/admin");
+  form.parse(req, async (err, fields, files) => {
+    await Articles.create({
+      title: fields.title,
+      content: fields.content,
+      image: files.image.newFilename,
+      userId: fields.author
+    })
+    res.redirect("/admin");
+  })
 };
 
 //Editar un Articulo

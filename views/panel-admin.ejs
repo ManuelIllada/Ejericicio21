@@ -53,12 +53,21 @@
               <%= articulo.content.substring(0,300 ) %>... %>
             </td>
             <td>
+              <% if (articulo.image.includes("http")) { %> 
               <img
               class="rounded"
                 style="object-fit: cover; width: 100px"
                 src="<%= articulo.image %>"
                 alt=""
               />
+              <% } else {%>
+                <img
+                class="rounded"
+                  style="object-fit: cover; width: 100px"
+                  src="/img/<%= articulo.image %>"
+                  alt=""
+                />
+                <% } %>
             </td>
             <td style="font-size: 13px" class="border">
               <%=format(articulo.createdAt, "EEEE d 'de' LLLL 'de' yyyy " ,{ locale: es })%>

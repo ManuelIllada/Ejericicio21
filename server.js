@@ -12,7 +12,7 @@ const fakerArticulos = require("./seeders/articleSeeder")
 const fakerComments = require("./seeders/commentSeeder")
 const fakerUsers = require("./seeders/userSeeder")
 
-// Poblanco DB
+// Poblando la DB
 /* fakerUsers()
 fakerArticulos() */
 /* fakerComments() */
@@ -24,6 +24,7 @@ const methodOverride = require('method-override')
 
 app.set("view engine", "ejs");
 app.use(express.static("css"));
+app.use(express.static("public"))
 
 app.use(methodOverride('_method'))
 

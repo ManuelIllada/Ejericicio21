@@ -15,28 +15,26 @@
   <body>
     <%-include("header")%>
       <!--     HERO -->
-    <div class="contenedor hero">
-      <div class="bg-dark w-100  h-100 bg-opacity-75 d-flex justify-content-center align-items-center ">
-      <div class="texto-centrado text-center fw-bold fade-in">
-        <h1 class="hack-blog">HackBlog</h1>
-        <p class="text-light">El blog de Hack Academy</p>
-      </div>
-    </div>
+        <div class="contenedor hero">
+          <div class="bg-dark w-100  h-100 bg-opacity-75 d-flex justify-content-center align-items-center ">
+          <div class="texto-centrado text-center fw-bold fade-in">
+            <h1 class="hack-blog">HackBlog</h1>
+            <p class="text-light">El blog de Hack Academy</p>
+          </div>
+        </div>
+          
       
-  
 
     <div class="container d-flex justify-content-center mt-3">
-      <div class="articulos">
-    <% for(const articulo of articulos) { %>
-      <div class="text-center slide-in-blurred-bottom">
-        <a class="text-decoration-none text-dark " href="/articles/<%=articulo.id%>"><h2 class="d-block text-start fw-bold"><%=articulo.title%></h2></a>
-        <p class="text-start opacity-75" style="font-style: italic; font-family: lora;"> <%=format(articulo.createdAt, "'Fue creado el'  EEEE d 'de' LLLL 'de' yyyy " ,{ locale: es })%> por <%=articulo.user.nombre%> <%=articulo.user.apellido%> </p>
-      <hr>
-      </div>
-      
-          
-      <% } %>
-    </div>
+        <div class="articulos">
+          <% for(const articulo of articulos) { %>
+          <div class="text-center slide-in-blurred-bottom">
+             <a class="text-decoration-none text-dark " href="/articles/<%=articulo.id%>"><h2 class="d-block text-start fw-bold"><%=articulo.title%></h2></a>
+             <p class="text-start opacity-75" style="font-style: italic; font-family: lora;"> <%=format(articulo.createdAt, "'Fue creado el'  EEEE d 'de' LLLL 'de' yyyy " ,{ locale: es })%> por <%=articulo.user.nombre%> <%=articulo.user.apellido%> </p>
+             <hr>
+          </div>
+           <% } %>
+        </div>
     </div>
 
     <%-include("footer")%>
