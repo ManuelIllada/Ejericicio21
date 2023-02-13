@@ -5,7 +5,11 @@ const { Articles, Comments, Users } = require("../models");
 
 //Página Todos los Articulos
 const index = async (req, res) => {
-  const articulos = await Articles.findAll({ include: Users });
+  const articulos = await Articles.findAll({
+    include: Users, order: [
+      ['createdAt', 'DESC']
+    ]
+  });
   res.render("home", { articulos, format, es });
 };
 
