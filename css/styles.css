@@ -142,6 +142,13 @@
   text-decoration: none;
 }
 
+.hack-titulo {
+  font-size: 2rem;
+}
+#contenedor-de-articulo {
+  width: 50%;
+}
+
 @media (max-width: 767.98px) {
   #logo {
     width: auto;
@@ -154,5 +161,11 @@
   }
   .articulos {
     width: 90%;
+  }
+  .hack-titulo {
+    font-size: 1.5rem;
+  }
+  #contenedor-de-articulo {
+    width: 100%;
   }
 }

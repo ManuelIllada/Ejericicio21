@@ -19,12 +19,12 @@
         <div class="contenedor">
           <div class="bg-dark w-100 h-100 bg-opacity-75 d-flex justify-content-center align-items-center">
           <div class="fw-bold text-center bounce-top" style="width: 50%;">
-            <h1 class="hack-titulo" style="font-size: 2rem;"><%= article.title %></h1>
+            <h1 class="hack-titulo"><%= article.title %></h1>
             <p class="hack-info mt-3"> Creado por <%= article.user.nombre %> <%= article.user.apellido %> el <%= format(article.createdAt, " EEEE d 'de' LLLL yyyy",  {locale: es}) %></p>
             
           </div>
         </div>
-      <div class="container" style="width: 50%;">
+      <div class="container" id="contenedor-de-articulo">
         <div class="py-5 d-flex justify-content-center align-items-center flex-column bounce-bottom">
           <p
             class="hack-content"
