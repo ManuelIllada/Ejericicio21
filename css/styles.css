@@ -1,7 +1,7 @@
 .contenedor {
   background-image: url("https://firebasestorage.googleapis.com/v0/b/noboss-app.appspot.com/o/nobossAppSimple%2Frecursos%2Ftest%2Fsmokefilledsnoqualmievalley.jpg?alt=media&token=08c72891-378b-4431-9802-c676453394e5");
   background-size: cover;
-  width: 100vw;
+  width: 100%;
   height: 50vh;
   background-repeat: no-repeat;
   animation: fade-in 2.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
@@ -64,55 +64,6 @@
   }
 }
 
-.bounce-bottom {
-  animation: bounce-bottom 1s both;
-}
-
-@keyframes bounce-bottom {
-  0% {
-    transform: translateY(45px);
-    animation-timing-function: ease-in;
-    opacity: 1;
-  }
-
-  24% {
-    opacity: 1;
-  }
-
-  40% {
-    transform: translateY(24px);
-    animation-timing-function: ease-in;
-  }
-
-  65% {
-    transform: translateY(12px);
-    animation-timing-function: ease-in;
-  }
-
-  82% {
-    transform: translateY(6px);
-    animation-timing-function: ease-in;
-  }
-
-  93% {
-    transform: translateY(4px);
-    animation-timing-function: ease-in;
-  }
-
-  25%,
-  55%,
-  75%,
-  87% {
-    transform: translateY(0px);
-    animation-timing-function: ease-out;
-  }
-
-  100% {
-    transform: translateY(0px);
-    animation-timing-function: ease-out;
-    opacity: 1;
-  }
-}
 
 .tilt-in-right-2 {
   -webkit-animation: tilt-in-right-2 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -151,55 +102,6 @@
   }
 }
 
-.bounce-top {
-  animation: bounce-top 1s both;
-}
-
-@keyframes bounce-top {
-  0% {
-    transform: translateY(-45px);
-    animation-timing-function: ease-in;
-    opacity: 1;
-  }
-
-  24% {
-    opacity: 1;
-  }
-
-  40% {
-    transform: translateY(-24px);
-    animation-timing-function: ease-in;
-  }
-
-  65% {
-    transform: translateY(-12px);
-    animation-timing-function: ease-in;
-  }
-
-  82% {
-    transform: translateY(-6px);
-    animation-timing-function: ease-in;
-  }
-
-  93% {
-    transform: translateY(-4px);
-    animation-timing-function: ease-in;
-  }
-
-  25%,
-  55%,
-  75%,
-  87% {
-    transform: translateY(0px);
-    animation-timing-function: ease-out;
-  }
-
-  100% {
-    transform: translateY(0px);
-    animation-timing-function: ease-out;
-    opacity: 1;
-  }
-}
 
 .hack-blog {
   font-size: 4rem;
