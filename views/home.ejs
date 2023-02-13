@@ -14,7 +14,8 @@
   </head>
   <body>
     <%-include("header")%>
-    <div class="contenedor">
+      <!--     HERO -->
+    <div class="contenedor hero">
       <div class="bg-dark w-100  h-100 bg-opacity-75 d-flex justify-content-center align-items-center ">
       <div class="texto-centrado text-center fw-bold">
         <h1 class="hack-blog">HackBlog</h1>
@@ -25,7 +26,7 @@
   
 
     <div class="container d-flex justify-content-center mt-3">
-      <div class="articulos ">
+      <div class="articulos">
     <% for(const articulo of articulos) { %>
       <div class="text-center">
         <a class="text-decoration-none text-dark " href="/articles/<%=articulo.id%>"><h2 class="d-block text-start fw-bold"><%=articulo.title%></h2></a>
