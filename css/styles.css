@@ -4,7 +4,7 @@
   height: 50vh;
   background-repeat: no-repeat;
 
-  animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fade-in 2.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 @keyframes fade-in {
@@ -20,7 +20,7 @@
 .slide-in-fwd-center {
   -webkit-animation: slide-in-fwd-center 0.8s
     cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation: slide-in-fwd-center 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-fwd-center 1.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 @-webkit-keyframes slide-in-fwd-center {
@@ -49,9 +49,9 @@
 }
 
 .slide-in-blurred-bottom {
-  -webkit-animation: slide-in-blurred-bottom 0.6s cubic-bezier(0.23, 1, 0.32, 1)
+  -webkit-animation: slide-in-blurred-bottom 1.2s cubic-bezier(0.23, 1, 0.32, 1)
     both;
-  animation: slide-in-blurred-bottom 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+  animation: slide-in-blurred-bottom 1.2s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
 
 @-webkit-keyframes slide-in-blurred-bottom {
@@ -96,7 +96,7 @@
 }
 
 .bounce-bottom {
-  animation: bounce-bottom 0.9s both;
+  animation: bounce-bottom 1s both;
 }
 
 @keyframes bounce-bottom {
@@ -139,9 +139,9 @@
 }
 
 .tilt-in-right-2 {
-  -webkit-animation: tilt-in-right-2 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+  -webkit-animation: tilt-in-right-2 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)
     both;
-  animation: tilt-in-right-2 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: tilt-in-right-2 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 @-webkit-keyframes tilt-in-right-2 {
@@ -170,8 +170,8 @@
 }
 
 .slide-bottom {
-  -webkit-animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  -webkit-animation: slide-bottom 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-bottom 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 @-webkit-keyframes slide-bottom {
@@ -196,7 +196,7 @@
 }
 
 .bounce-top {
-  animation: bounce-top 0.9s both;
+  animation: bounce-top 1s both;
 }
 
 @keyframes bounce-top {
