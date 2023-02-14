@@ -11,7 +11,7 @@ module.exports = async () => {
             id: [i],
             content: faker.lorem.sentence(5),
             userId: faker.helpers.arrayElement([1, 2, 3, 4]),
-            articleId: faker.helpers.arrayElement([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+            articleId: faker.helpers.arrayElement([1, 2, 3, 4, 5])
         });
     }
 

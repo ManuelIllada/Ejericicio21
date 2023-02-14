@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 
-// Rutas relacionadas a los comentarios:
-// ...
+router.put("/comments/add/:id", commentsController.addCommentFunction);
 
 module.exports = router;
