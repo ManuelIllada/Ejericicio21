@@ -10,9 +10,13 @@ const registerUser = async (req, res) => {
   res.render("registerUser");
 };
 
+const loginUser = async (req, res) => {
+  res.render("login");
+};
+
 const login = passport.authenticate("local", {
   successRedirect: "/",
   failureRedirect: "/login",
 });
 
-module.exports = { registerUser, login };
+module.exports = { registerUser, loginUser, login };

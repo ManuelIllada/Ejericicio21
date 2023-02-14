@@ -5,6 +5,7 @@ const userController = require("../controllers/userController");
 //PAGINAS DE REGISTRAR USUARIO//
 
 router.get("/registro", userController.registerUser);
+router.get("/login", userController.loginUser);
 
 // router.get("/", userController.index);
 // router.get("/crear", userController.create);
