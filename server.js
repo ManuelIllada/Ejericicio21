@@ -56,7 +56,7 @@ passport.use(
   new LocalStrategy(async (username, password, done) => {
     //Buscamos el usuario en la db
     try {
-      const user = await User.findOne({ where: { username } });
+      const user = await User.findOne({ where: { email: username } });
       if (!user) {
         console.log("El usuario  no  existe");
         return done(null, false, { message: "Credenciales incorrectas" });
