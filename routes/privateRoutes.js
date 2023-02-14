@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const mainController = require("../controllers/mainController");
+const admController = require("../controllers/admController");
 
 // Pagina panel Administrador
-router.get("/", mainController.admPage);
+router.get("/", admController.admPage);
 
 module.exports = router;

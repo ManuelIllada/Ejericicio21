@@ -3,16 +3,6 @@ const formidable = require("formidable")
 const { es } = require("date-fns/locale");
 const { Articles, Comments, Users } = require("../models");
 
-//Página Todos los Articulos
-const index = async (req, res) => {
-  const articulos = await Articles.findAll({
-    include: Users, order: [
-      ['createdAt', 'DESC']
-    ]
-  });
-  res.render("home", { articulos, format, es });
-};
-
 //Página Crear Articulos
 const addArticlePage = async (req, res) => {
   const users = await Users.findAll();
@@ -33,7 +23,6 @@ const articlePage = async (req, res) => {
   });
   res.render("article", { article, comments, format, es });
 };
-
 
 //Página Api Articulos
 const apiArticlesPage = async (req, res) => {
@@ -82,7 +71,6 @@ const deleteArticle = async (req, res) => {
 };
 
 module.exports = {
-  index,
   articlePage,
   addArticlePage,
   addArticleFunction,
