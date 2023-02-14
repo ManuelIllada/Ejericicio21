@@ -14,7 +14,8 @@ const routes = require("./routes");
 const session = require("express-session");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
-
+const { User } = require("./models");
+const bcrypt = require("bcryptjs");
 // METHODOVERRIDE - Require
 const methodOverride = require("method-override");
 
@@ -42,51 +43,59 @@ app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: true }));
 
 //////////////////////////////////////////// Passport y configuración
-/* app.use(
+app.use(
   session({
-    secret: "",
+    secret: process.env.SESSION,
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
   })
-)
-app.use(passport.session())
+);
+app.use(passport.session());
 
 passport.use(
   new LocalStrategy(async (username, password, done) => {
     //Buscamos el usuario en la db
     try {
-      User.findOne({ where: { email: username } })
-      await ((user) => {
-        // Condiciones para corroborar que las credenciales del usuario son correctas
-      })
-    }
-    catch (error) {
+      const user = await User.findOne({ where: { username } });
+      if (!user) {
+        console.log("El usuario  no  existe");
+        return done(null, false, { message: "Credenciales incorrectas" });
+      }
+      const match = await bcrypt.compare(password, user.password);
+      if (!match) {
+        console.log("La pass es inválida");
+        return done(null, false, { message: "Credenciales incorrectas" });
+      }
+      console.log("Credenciales verificadas");
+      return done(null, user);
+    } catch (error) {
       return done(error);
     }
   })
-)
+);
 
 passport.serializeUser((user, done) => {
-  done(null, req.session.passport.user)
-})
+  done(null, req.session.passport.user);
+});
 
 passport.deserializeUser(async (id, done) => {
-  User.findByPk(req.session.passport.user)
+  User.findByPk(req.session.passport.user);
   try {
     await ((user) => {
       done(null, user);
-    })
+    });
+  } catch (error) {
+    done(error, null);
   }
-  catch (error) {
-    done(error, null)
-  }
-})
+});
 
-app.post("/login",
-passport.authenticate("local",{
-  successRedirect: "/",
-  failureRedirect: "/login"
-})) */
+app.post(
+  "/login",
+  passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/login",
+  })
+);
 
 //////////////////////////////////////////// Activación de Rutas
 /* app.use(routes); */
