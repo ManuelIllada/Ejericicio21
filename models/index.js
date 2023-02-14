@@ -8,7 +8,7 @@ const sequelize = new Sequelize(
     host: process.env.DB_HOST, // Ej: 127.0.0.1
     dialect: process.env.DB_CONNECTION, // Ej: mysql
     logging: false, // Para que no aparezcan mensajes en consola.
-  },
+  }
 );
 
 const Users = require("./User");
@@ -18,7 +18,7 @@ const Articles = require("./Article");
 Users.initModel(sequelize);
 Comments.initModel(sequelize);
 Articles.initModel(sequelize);
-
+// sequelize.sync({ force: true });
 /**
  * Luego de definir los modelos, se pueden establecer relaciones entre los
  * mismos (usando métodos como belongsTo, hasMany y belongsToMany)...
