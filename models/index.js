@@ -19,6 +19,7 @@ Users.initModel(sequelize);
 Comments.initModel(sequelize);
 Articles.initModel(sequelize);
 // sequelize.sync({ force: true });
+
 /**
  * Luego de definir los modelos, se pueden establecer relaciones entre los
  * mismos (usando métodos como belongsTo, hasMany y belongsToMany)...
