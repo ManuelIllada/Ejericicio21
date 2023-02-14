@@ -25,4 +25,5 @@ const logUser = async (req, res) => {
 const logOut = async (req, res) => {
   res.render("login");
 };
+
 module.exports = { admPage };
