@@ -19,7 +19,7 @@
       <div class="d-flex items-center justify-content-between mt-4">
         <h3 class="fw-bolder">Articulos</h3>
         <div>
-          <a href="/articles/add" type="button" class="btn btn-success"
+          <a href="/articulos/add" type="button" class="btn btn-success"
             >Nuevo</a
           >
         </div>
@@ -79,7 +79,7 @@
             <td style="width: 10px; white-space: nowrap">
               <div class="d-grid gap-2">
                 <a
-                  href="/articles/edit/<%= articulo.id %>"
+                  href="/articulos/edit/<%= articulo.id %>"
                   type="button"
                   class="btn btn-primary"
                   name="editUser"
@@ -87,7 +87,7 @@
                   Editar
                 </a>
                 <form
-                  action="/articles/delete/<%= articulo.id %>?_method=delete"
+                  action="/articulos/delete/<%= articulo.id %>?_method=delete"
                   method="POST"
                 >
                   <button type="submit" class="btn btn-danger">Eliminar</button>

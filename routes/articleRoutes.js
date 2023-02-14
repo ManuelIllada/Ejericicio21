@@ -4,30 +4,24 @@ const articleController = require("../controllers/articleController");
 
 ///////////////////////////////////////  PAGINAS ARTICULO
 
-// Página Home Articulos
-router.get("/", articleController.index);;
-
 // Pagina agregar Articulo
-router.get("/articles/add", articleController.addArticlePage);
+router.get("/add", articleController.addArticlePage);
 
 // Pagina editar Articulo
-router.get("/articles/edit/:id", articleController.editArticlePage);
+router.get("/edit/:id", articleController.editArticlePage);
 
 // Pagina un Articulo
-router.get("/articles/:id", articleController.articlePage);
-
-// Pagina panel Administrador
-router.get("/admin", articleController.admArticulosPAge);
+router.get("/:id", articleController.articlePage);
 
 ///////////////////////////////////////  FUNCIONES ARTICULO
 
-// Función Agregar Articulo
-router.put("/articles/add", articleController.addArticleFunction);
+// Función Agregar Articulo 
+router.put("/add", articleController.addArticleFunction);
 
 // Función Editar Articulo
-router.patch("/articles/edit/:id", articleController.editArticleFunction);
+router.patch("/edit/:id", articleController.editArticleFunction);
 
 // Función Eliminar Articulo
-router.delete("/articles/delete/:id", articleController.deleteArticle);
+router.delete("/delete/:id", articleController.deleteArticle);
 
 module.exports = router;

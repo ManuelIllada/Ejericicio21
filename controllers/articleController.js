@@ -34,11 +34,6 @@ const articlePage = async (req, res) => {
   res.render("article", { article, comments, format, es });
 };
 
-//Página admin de Articulos
-const admArticulosPAge = async (req, res) => {
-  const articles = await Articles.findAll({ include: Users });
-  res.render("panel-admin", { articles, format, es });
-};
 
 //Página Api Articulos
 const apiArticlesPage = async (req, res) => {
@@ -95,5 +90,4 @@ module.exports = {
   apiArticlesPage,
   editArticleFunction,
   deleteArticle,
-  admArticulosPAge,
 };

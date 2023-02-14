@@ -1,6 +1,5 @@
 const db = require("../db");
-const { format } = require("date-fns");
-const { es } = require("date-fns/locale");
+
 const { Comments } = require("../models");
 const { Users } = require("../models");
 
@@ -10,7 +9,7 @@ const addCommentFunction = async (req, res) => {
     content: req.body.content,
     articleId: req.params.id,
   }, ({ include: Users }));
-  res.redirect(`/articles/${req.params.id}`);
+  res.redirect(`/articulos/${req.params.id}`);
 };
 
 module.exports = {

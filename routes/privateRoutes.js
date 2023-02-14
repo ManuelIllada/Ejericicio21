@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
+const mainController = require("../controllers/mainController");
 
-// Rutas relacionadas al panel de control (Admin):
-// ...
+// Pagina panel Administrador
+router.get("/", mainController.admPage);
 
 module.exports = router;

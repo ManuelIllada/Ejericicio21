@@ -1,4 +1,4 @@
-////////////////////////////////////////////  Requires ////////////////////////////////////////////
+////////////////////////////////////////////  Requires
 // DOT ENV - Require
 require("dotenv").config();
 const APP_PORT = process.env.APP_PORT || 3000;
@@ -23,7 +23,7 @@ const fakerArticulos = require("./seeders/articleSeeder")
 const fakerComments = require("./seeders/commentSeeder")
 const fakerUsers = require("./seeders/userSeeder")
 
-////////////////////////////////////////////  Poblando la DB ////////////////////////////////////////////
+////////////////////////////////////////////  Poblando la DB
 /* fakerUsers()
 fakerArticulos() */
 /* fakerComments() */
@@ -41,8 +41,7 @@ app.use(methodOverride('_method'))
 // - URLEncoded - Permite recibir la información enviada mediate el metodo POST, (sustituimos req.query por req.body)
 app.use(express.urlencoded({ extended: true }))
 
-//////////////////////////////////////////// Passport y configuración ////////////////////////////////////////////
-
+//////////////////////////////////////////// Passport y configuración
 /* app.use(
   session({
     secret: "",
@@ -89,12 +88,11 @@ passport.authenticate("local",{
   failureRedirect: "/login"
 })) */
 
+//////////////////////////////////////////// Activación de Rutas
+/* app.use(routes); */
+routes(app);
 
-//////////////////////////////////////////// Activación de Rutas ////////////////////////////////////////////
-app.use(routes);
-/* routes(app); */
-
-////////////////////////////////////////////  Inicio de Server ////////////////////////////////////////////
+////////////////////////////////////////////  Inicio de Server 
 app.listen(APP_PORT, function () {
   console.log(`Server funciona en el puerto: ${APP_PORT}`);
 });

@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
+const articleController = require("../controllers/articleController");
 
-// Rutas relacionadas a la parte pública del sitio web:
-// ...
+// Página Home Articulos
+router.get("/", articleController.index);
 
 module.exports = router;
