@@ -1,8 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const articleController = require("../controllers/articleController");
+const makeUserAvailableInViews = require("../middlewares/makeUserAvailableInViews");
 
 ///////////////////////////////////////  PAGINAS ARTICULO
+
+router.use(makeUserAvailableInViews);
 
 // Pagina agregar Articulo
 router.get("/add", articleController.addArticlePage);
@@ -15,7 +18,7 @@ router.get("/:id", articleController.articlePage);
 
 ///////////////////////////////////////  FUNCIONES ARTICULO
 
-// Función Agregar Articulo 
+// Función Agregar Articulo
 router.put("/add", articleController.addArticleFunction);
 
 // Función Editar Articulo

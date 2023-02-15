@@ -18,7 +18,7 @@
       <form
         class="mt-4 border rounded p-4 shadow slide-bottom"
         method="POST"
-        action="/articulos/add?_method=put"
+        action="/usuarios/registro"
       >
         <a href="/" class="mt-2">Volver</a>
         <div class="text-center">
@@ -34,7 +34,7 @@
             name="firstname"
             class="form-control"
             id="firstname"
-            required
+           
           />
         </div>
         <div class="mb-3">
@@ -46,7 +46,7 @@
             name="lastname"
             class="form-control"
             id="lastname"
-            required
+           
           />
         </div>
         <div class="mb-3">
@@ -58,12 +58,12 @@
             name="email"
             class="form-control"
             id="email"
-            required
+         
           />
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" name="password" id="password">
         </div>
         <div class="mt-4 d-flex justify-content-end">
           <button type="submit" class="btn btn-success">Registrar</button>

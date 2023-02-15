@@ -1,10 +1,14 @@
 const express = require("express");
 const router = express.Router();
 const userController = require("../controllers/userController");
+const makeUserAvailableInViews = require("../middlewares/makeUserAvailableInViews");
+
+router.use(makeUserAvailableInViews);
 
 //PAGINAS DE REGISTRAR USUARIO//
 
 router.get("/registro", userController.registerUser);
+router.post("/registro", userController.create);
 router.get("/login", userController.index);
 router.post("/login", userController.login);
 router.get("/logout", userController.logOut);

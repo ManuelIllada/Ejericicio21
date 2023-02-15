@@ -10,6 +10,18 @@ const registerUser = async (req, res) => {
   res.render("registerUser");
 };
 
+const create = async (req, res) => {
+  const user = req.body;
+  await Users.create({
+    nombre: user.firstname,
+    apellido: user.lastname,
+    email: user.email,
+    password: await bcrypt.hash(`${user.password}`, 8),
+  });
+  console.log(req.body);
+  res.redirect("/");
+};
+
 const index = async (req, res) => {
   res.render("login");
 };
@@ -27,4 +39,4 @@ function logOut(req, res, next) {
     res.redirect("/");
   });
 }
-module.exports = { registerUser, index, login, logOut };
+module.exports = { registerUser, index, login, logOut, create };
