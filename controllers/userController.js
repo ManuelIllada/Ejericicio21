@@ -10,13 +10,13 @@ const registerUser = async (req, res) => {
   res.render("registerUser");
 };
 
-const loginUser = async (req, res) => {
+const index = async (req, res) => {
   res.render("login");
 };
 
 const login = passport.authenticate("local", {
-  successRedirect: "/",
+  successRedirect: "/admin",
   failureRedirect: "/login",
 });
 
-module.exports = { registerUser, loginUser, login };
+module.exports = { registerUser, index, login };

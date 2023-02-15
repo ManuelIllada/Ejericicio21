@@ -9,12 +9,12 @@ const app = express();
 
 // Rutas - Require
 const routes = require("./routes");
-
+const { Sequelize, Model, DataTypes } = require("sequelize");
 //PassPort - Require
 const session = require("express-session");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
-const { User } = require("./models");
+const { Users } = require("./models");
 const bcrypt = require("bcryptjs");
 // METHODOVERRIDE - Require
 const methodOverride = require("method-override");
@@ -56,7 +56,7 @@ passport.use(
   new LocalStrategy(async (username, password, done) => {
     //Buscamos el usuario en la db
     try {
-      const user = await User.findOne({ where: { email: username } });
+      const user = await Users.findOne({ where: { email: username } });
       if (!user) {
         console.log("El usuario  no  existe");
         return done(null, false, { message: "Credenciales incorrectas" });
@@ -69,33 +69,34 @@ passport.use(
       console.log("Credenciales verificadas");
       return done(null, user);
     } catch (error) {
-      return done(error);
+      done(error);
     }
   })
 );
 
 passport.serializeUser((user, done) => {
-  done(null, req.session.passport.user);
+  done(null, user.id);
 });
 
 passport.deserializeUser(async (id, done) => {
-  User.findByPk(req.session.passport.user);
   try {
-    await ((user) => {
+    const user = await Users.findByPk(id);
+
+    (user) => {
       done(null, user);
-    });
+    };
   } catch (error) {
     done(error, null);
   }
 });
 
-app.post(
-  "/login",
-  passport.authenticate("local", {
-    successRedirect: "/",
-    failureRedirect: "/login",
-  })
-);
+// app.post(
+//   "/login",
+//   passport.authenticate("local", {
+//     successRedirect: "/",
+//     failureRedirect: "/login",
+//   })
+// );
 
 //////////////////////////////////////////// Activación de Rutas
 /* app.use(routes); */
