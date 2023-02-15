@@ -54,7 +54,6 @@ app.use(passport.session());
 
 passport.use(
   new LocalStrategy(async (username, password, done) => {
-    //Buscamos el usuario en la db
     try {
       const user = await Users.findOne({ where: { email: username } });
       if (!user) {
@@ -87,14 +86,6 @@ passport.deserializeUser(async (id, done) => {
     done(error, null);
   }
 });
-
-// app.post(
-//   "/login",
-//   passport.authenticate("local", {
-//     successRedirect: "/",
-//     failureRedirect: "/login",
-//   })
-// );
 
 //////////////////////////////////////////// Activación de Rutas
 /* app.use(routes); */
