@@ -17,7 +17,6 @@
     <%- include("header") %>
     <div class="slide-in-fwd-center container d-grid gap-3">
       <div class="d-flex items-center justify-content-between mt-4">
-        <p><%= user.email %></p>
         <h3 class="fw-bolder">Articulos</h3>
         <div>
           <a href="/articulos/add" type="button" class="btn btn-success"
@@ -78,6 +77,7 @@
               <%= articulo.user.apellido %>
             </td>
             <td style="width: 10px; white-space: nowrap">
+              <% if (user.email === articulo.user.email) { %>
               <div class="d-grid gap-2">
                 <a
                   href="/articulos/edit/<%= articulo.id %>"
@@ -94,6 +94,9 @@
                   <button type="submit" class="btn btn-danger">Eliminar</button>
                 </form>
               </div>
+            <% } else { %>
+              <p></p>
+              <% } %>
             </td>
           </tr>
           <%}%>
