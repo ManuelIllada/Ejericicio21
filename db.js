@@ -8,4 +8,3 @@ module.exports = async () => {
   await require("./seeders/articleSeeder")();
   console.log("[Database] ¡Los datos de prueba fueron insertados!");
 };
-
